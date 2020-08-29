@@ -46,5 +46,4 @@ Streams can increase the performance of the application, as you don't need to wa
 - Writable Streams - allow node.js to write data to a stream
 - Readable Streams - allow node.js to read data from a stream 
 - Duplex - can read and write to a stream 
-
 */
