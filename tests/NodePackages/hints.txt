@@ -1,0 +1,22 @@
+//npm install (without a suffix)
+
+If you run: npm install it will automatically 
+install all dependencies found in the package.json 
+(useful if you clone a project)
+
+
+//Global Installs 
+
+npm install -g nodemon
+
+-g means we have installed it to the computer, meaning that any other applications will have access to it
+
+When you install 
+
+//Express
+
+- Is an easy and flexible routing system 
+
+- integrates with many templating engines 
+
+- contains a middleware framework
