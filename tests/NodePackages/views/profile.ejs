@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/assets/styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <!--This is how you do a partial view.-->
+        <!--allows you to pull html as if it were a component, and then reuse it.-->
+        <%- include('partials/nav') -%>
+        <!--The = is used for outputting data. Otherwise we don't use it-->
+        <h1>Welcome to profile of <%= person %></h1>
+        <p><strong>Age:</strong> <%= data.age %></p>
+        <p><strong>Job:</strong> <%= data.job %></p>
+        <h2>Hobbies</h2>
+        <ul>
+            <% data.hobbies.forEach(function(item){ %>
+                <li><%= item %></li>
+
+
+           <% }) %> 
+        </ul>
+    </body>
+</html>

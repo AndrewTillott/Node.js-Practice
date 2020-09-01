@@ -1,4 +1,5 @@
 var express = require('express');
+const { reset } = require('nodemon');
 
 //What is returned to us is a function
 //therefore on this variable we have access to all the different methods on express e.g. things like routing or setting up template engines
@@ -20,7 +21,7 @@ app.listen(4000);
 //This is how we respond to a get request: 
 // app.get('route', fn)
 
-app.get('/', function(req, res){
+app.get('/fghh', function(req, res){
     //this is an express method
     //express identified that it was a string, so we didn't have to express the content type
     res.send('this is the home page');
@@ -39,6 +40,11 @@ app.get('/profile/:id', function(req, res){
 
 app.get('/profile/:name', function(req, res){
     res.send('You requested to see a profile with the name of ' + req.params.name);
+})
+
+app.get('/', function(req,res){
+    //renders a html page
+    res.sendFile(__dirname + '/index.html')
 })
 
 //Post

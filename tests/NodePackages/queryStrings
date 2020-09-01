@@ -1,0 +1,19 @@
+Query Strings is: additional data added to the end of a http request in the form of name value pairs
+
+example: 
+
+mysite.com/blog/news?page=2
+
+Starts with the ? so its the second page of news in the blog
+
+The start of the query string always starts with a ? 
+
+Name vale pair: person=ryu
+
+Add another name value pair: & 
+
+Name value pair: dept=marketing
+
+example: mysite.com/contact?person=ryu7dept=marketing
+
+
