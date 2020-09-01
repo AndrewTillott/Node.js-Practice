@@ -1,5 +1,14 @@
 var express = require('express');
+//the req object can handle parsing data from a query string, but it can't do it for post data. Hence why we need body parser
+//parses incoming request bodies in a middleare before your handlers. Available under the req.body property
+//Data parsing is a method where one string of data is converted into a different type of data 
+//https://www.npmjs.com/package/body-parser
+//npm install body-paser
+var bodyParser = require('body-parser');
 var app = express();
+
+//middleware that parse our post data for us (stored in urlencodedParser)
+var urlencodedParser = bodyParser.urlencoded({extended: false});
 
 //tell express that we want to use ejs as our view engine
 //by default (when we request some views or template its going to look in the/views template folder for them) it will look in the /views folder for the ejs page
@@ -31,6 +40,17 @@ app.get('/contact', function(req, res){
     console.log(req.query);
     //we can pass in data to our ejs by simply adding data as the second parameter in the render method, we can therefore easily pass the query string to the view
     /*up to this point = middleware presumably*/res.render('contact', {queryString: req.query});
+})
+
+
+//wheras we get the data from query strings for get requests, when it comes to post requests we take it from the body itself
+//urlencodedParser will fire whenever that post request is made
+
+app.post('/contact', urlencodedParser, function(req, res){
+    //we got access to the body object from urlencodedParser
+    //the body will contain all of the data that we requested (after it has been parsed)
+    console.log(req.body)
+    res.render('contact-success', {queryString: req.body});
 })
 
 //we don't need to specify to look to the 'views' folder, that's the default behaviour

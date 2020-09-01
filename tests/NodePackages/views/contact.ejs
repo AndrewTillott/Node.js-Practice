@@ -11,8 +11,9 @@
         <!--We are pulling the answer for the dept from the query string-->
         <!--You can see on ejs.ejs that we named the query string "queryString" and that is why it is named as such here-->
         <p><%= queryString.dept %> <%= queryString.person %></p>
-        <form id="contact-form">
+        <form id="contact-form" method="POST" action="/contact">
             <label for="who">Who do you want to contact?</label>
+            <!--When we end up with key value pairs as we pull data with body parser. It is actually the name that represents the key-->
             <input type="text" name="who" value="<%= queryString.person %>">
             <label for="department">Which department?</label>
             <input type="text" name="department" value="<%= queryString.dept %>">

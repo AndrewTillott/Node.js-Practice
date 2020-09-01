@@ -1,0 +1,7 @@
+Post requests are methods 
+
+Posts are a request method 
+
+Post requests ask the server to accept/store data which is enclosed in the body of the request 
+
+Often used when submitting forms 
